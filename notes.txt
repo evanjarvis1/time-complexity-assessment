@@ -1,0 +1,23 @@
+XL array
+Insert takes 1.99 secs for xl array
+append takes 6.7239 milliseconds for xl array.
+
+largeArray
+insert: 17.3 milliseconds
+append: 1.3 milliseconds
+
+medium
+insert: 329 microseconds
+append: 300 microseconds
+
+small
+insert: 116.3 microseconds
+append: 182.3 microseconds
+
+tiny
+insert: 63.1 microseconds
+append: 176.5 microseconds
+
+The insert function takes less time across the board, but as the array gets smaller the difference becomes more negligible. The bigger the scale these functions are implemented on the better it would be to use the insert function. Technically only the xl array would be a time difference that would be observable to a human being, but assuming this wouldn't be the only funciton on a website in a real life situation, the less time complexity, the faster the site will load in its entirety.
+
+The reason append is so much slower is because it uses the unshift function, which adds to the start of the array. This means the computer has to move each value in the array by one index versus the insert which uses .push() which just adds the value to the end of the array, not requiring changes to the index of other values.
